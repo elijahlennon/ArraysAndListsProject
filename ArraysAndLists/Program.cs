@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArraysAndLists
 {
@@ -8,25 +9,65 @@ namespace ArraysAndLists
         {
             //TODO:
 
-            // Create an int Array and populate numbers 1-10
+            // Create an int Array and populate numbers 1-10 - DONE
+
+            int[] myArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, };
 
             /* Create two Lists of type int.
              * Name one List "evens"
-             * Name the other List "odds"
+             * Name the other List "odds" - DONE
              */
+            var evens = new List<int>();
+            var odds = new List<int>();
 
             /* Using either a foreach or for loop,
              * nest an if statement to check to see
              *  if a number is even or odd.
              * Then add those numbers to either the evens List
-             * or the odds List
+             * or the odds List - DONE
              */
+             foreach(var item in myArray)
+             {
+                if (item % 2 == 0)
+                {
+                    evens.Add(item);
+                }
+                else
+                {
+                    odds.Add(item);
+                }
 
+             }
             /* Now using foeach or for loops,
              * display each List of even and odd numbers
              *
-             * Try to be creative in your display
+             * Try to be creative in your display - DONE
              */
+            Console.Write("Evens: ");
+
+            for (var i = 0; i < evens.Count; i++)
+            {
+                if (i + 1 != evens.Count)
+                {
+                    Console.Write(evens[i] + ", ");
+                }
+                else
+                {
+                    Console.Write("& " + evens[i] + "!");
+                }
+            }
+            Console.WriteLine("");
+            Console.Write("Odds: ");
+            for (var i = 0; i < odds.Count; i++)
+            {
+                if (i + 1 != odds.Count) {
+                    Console.Write(odds[i] + ", ");
+                }
+                else
+                {
+                    Console.Write("& " + odds[i] + "!");
+                }
+            }
         }
     }
 }
